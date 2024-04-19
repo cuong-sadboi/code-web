@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarTop4">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-                 <a href="#" class="nav-link">   English </a>
+                 <a href="#" class="nav-link">   Tiếng Việt </a>
                 
             </li>
             <li class="nav-item dropdown">
@@ -37,10 +37,10 @@
           <div class="category-wrap dropdown d-inline-block float-right">
             <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-bars"></i> All category
+                <i class="fa fa-bars"></i> Tất cả danh mục
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="{% url 'store' %}">All Products </a>
+                <a class="dropdown-item" href="{% url 'store' %}">Tất cả sản phẩm </a>
                 {% for category in links %}
                 <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }} </a>
               {% endfor %}
@@ -48,11 +48,11 @@
             </div>
           </div>  <!-- category-wrap.// -->
         </div> <!-- col.// -->
-        <a href="{% url 'store' %}" class="btn btn-outline-primary">Store</a>
+        <a href="{% url 'store' %}" class="btn btn-outline-primary">Cửa hàng</a>
         <div class="col-lg  col-md-6 col-sm-12 col">
             <form action="{% url 'search' %}" class="search" method='GET'>
                 <div class="input-group w-100">
-                    <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="keyword">
+                    <input type="text" class="form-control" style="width:60%;" placeholder="Tìm kiếm" name="keyword">
                     
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="submit">
@@ -66,18 +66,18 @@
                     <div class="d-flex justify-content-end mb-3 mb-lg-0">
                       {% if user.id is None %}
                         <div class="widget-header">
-                            <small class="title text-muted">Welcome guest!</small>
+                            <small class="title text-muted">Xin chào!</small>
                             <div> 
-                                <a href="{% url 'login' %}">Sign in</a> <span class="dark-transp"> | </span>
-                                <a href="{% url 'register' %}"> Register</a>
+                                <a href="{% url 'login' %}">Đăng nhập</a> <span class="dark-transp"> | </span>
+                                <a href="{% url 'register' %}"> Đăng ký</a>
                             </div>
                         </div>
                         {% else %}
                         <div class="widget-header">
-                          <small class="title text-muted">Welcome {{user.first_name}}</small>
+                          <small class="title text-muted">Xin chào {{user.first_name}}</small>
                           <div> 
-                              <a href="{% url 'dashboard' %}">Dashboad</a> <span class="dark-transp"> | </span>
-                              <a href="{% url 'logout' %}"> Logout</a>
+                              <a href="{% url 'dashboard' %}">Bảng điều khiển</a> <span class="dark-transp"> | </span>
+                              <a href="{% url 'logout' %}"> Đăng xuất</a>
                           </div>
                       </div>
                         {% endif %}
